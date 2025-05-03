@@ -50,14 +50,15 @@ ContinentalMoney là một Discord bot quản lý tiền tệ, booking player, v
 - `/unsetplayer @user` — Gỡ quyền player
 
 ## Quyền hạn
-- **Admin:** Quản lý, nạp tiền, xem lịch sử, phân quyền player
-- **Player:** Chỉ nhận booking, không được booking user khác
-- **User:** Chỉ được booking player, không được booking user.
+- **Admin:** Có thể booking player, quản lý, nạp tiền, xem lịch sử, phân quyền player
+- **Player:** Có thể booking player khác, nhận booking
+- **User:** Có thể booking player
 
 ## Booking Player
-- Khi user booking player, player sẽ nhận được thông báo với 2 nút: "Đồng ý" hoặc "Từ chối".
+- Admin, user, player đều có thể booking player khác.
+- Chỉ được booking nếu người được booking là player.
+- Khi booking, player sẽ nhận được thông báo với 2 nút: "Đồng ý" hoặc "Từ chối".
 - Chỉ khi player bấm "Đồng ý" thì giao dịch booking mới thực hiện.
-- Admin và player không được phép booking player khác.
 
 ## Lưu ý
 - Bot sử dụng SQLite để lưu trữ dữ liệu, file database sẽ tự động tạo khi chạy bot lần đầu.
