@@ -4,16 +4,16 @@ const { ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder } = require('
 
 module.exports = {
     booking: async (message, args) => {
-        isAdmin(message.author.id, async (admin) => {
-            if (admin) {
-                return message.reply('Admin không được phép booking player!');
+        const player = message.mentions.users.first();
+        const amount = parseFloat(args[1]);
+        if (!player || isNaN(amount) || amount <= 0) {
+            return message.reply('Usage: /booking @player <amount>');
+        }
+        // Kiểm tra người được booking có phải player không
+        isPlayer(player.id, async (isP) => {
+            if (!isP) {
+                return message.reply('Chỉ được booking player!');
             }
-            const player = message.mentions.users.first();
-            const amount = parseFloat(args[1]);
-            if (!player || isNaN(amount) || amount <= 0) {
-                return message.reply('Usage: /booking @player <amount>');
-            }
-
             // Tạo Embed đẹp mắt
             const embed = new EmbedBuilder()
                 .setTitle('💼 Lời Mời Booking 💼')
