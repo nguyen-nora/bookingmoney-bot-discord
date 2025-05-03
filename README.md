@@ -52,7 +52,7 @@ ContinentalMoney là một Discord bot quản lý tiền tệ, booking player, v
 ## Quyền hạn
 - **Admin:** Quản lý, nạp tiền, xem lịch sử, phân quyền player
 - **Player:** Chỉ nhận booking, không được booking user khác
-- **User:** Chỉ được booking player, không được booking user hoặc player khác
+- **User:** Chỉ được booking player, không được booking user.
 
 ## Booking Player
 - Khi user booking player, player sẽ nhận được thông báo với 2 nút: "Đồng ý" hoặc "Từ chối".
